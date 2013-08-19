@@ -1,6 +1,7 @@
 class TweetsController < ApplicationController
   
   def index
+    @tweets = Tweet.all
   end
   
   def show
@@ -28,6 +29,15 @@ class TweetsController < ApplicationController
   end
   
   def update
+    @tweet = Tweet.find(params[:id])
+    @tweet.update_attributes(params[:tweet])
+    if @task.save
+      flash[:notice] = "Tweet Updated!"
+      redirect_to tweets_path
+    else
+      flash[:notice] = "There was a problem:"
+      render "edit"
+    end
   end
   
   def destroy

@@ -6,10 +6,11 @@
 		<th>Zombie</th>
 	</tr>
 	
-	<% Tweet.all.each do |tweet| %>
+	<% @tweets.each do |tweet| %>
 		<tr>
 			<td><%= tweet.status %></td>
 			<td><%= link_to tweet.zombie.name, tweet.zombie %></td>
+			<td><%= link_to "Edit", edit_tweet_path(tweet.zombie) %></td>
 			<td><%= link_to "Delete", tweet, confirm: "Are you sure?", method: 'delete' %></td>
 		</tr>
 	<% end %>
