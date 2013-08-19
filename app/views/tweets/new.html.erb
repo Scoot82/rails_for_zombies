@@ -1,0 +1,17 @@
+<h1>Compose a new tweet</h1>
+
+<%= form_for @tweet do |f| %>
+
+<p>  
+  <%= f.label :status %>
+  <%= f.text_field :status %>
+</p>  
+
+<p>  
+  <%= f.label "Zombie ID" %>
+  <%= f.text_field :zombie_id %>
+</p>
+
+  <%= f.submit %>
+  
+<% end %>

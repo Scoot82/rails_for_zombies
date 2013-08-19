@@ -1,0 +1,14 @@
+<h1>List of Zombies</h1>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Last Tweet</th>
+	</tr>
+
+<% Zombie.all.each do |zombie| %>
+	<tr>
+		<td><%= link_to zombie.name, zombie %></td>
+		<td><%= zombie.tweets.last.status %></td>
+	</tr>
+<% end %>	

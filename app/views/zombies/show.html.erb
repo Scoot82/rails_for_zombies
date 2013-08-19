@@ -1,0 +1,15 @@
+<h1>Profile for Zombie <%= @zombie.name %></h1>
+
+	<table>
+		<tr>
+			<th>Status</th>
+			<th>Date Added</th>
+		</tr>
+
+		<% @zombie.tweets.each do |tweet| %>
+		<tr>
+			<td><%= tweet.status %></td>
+			<td><%= tweet.created_at %></td>
+			<% end %>
+		</tr>
+	</table>		

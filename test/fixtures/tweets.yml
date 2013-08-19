@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  zombie: MyString
+  status: MyString
+
+two:
+  zombie: MyString
+  status: MyString
