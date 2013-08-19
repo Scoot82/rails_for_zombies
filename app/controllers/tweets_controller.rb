@@ -19,9 +19,11 @@ class TweetsController < ApplicationController
     @tweet = Tweet.new(params[:tweet])
     
     if @tweet.save
-      redirect_to root_url, notice: "New tweet added!"
+      flash[:notice] = "New tweet added!"
+      redirect_to root_path
     else
-      render :new, notice: "Something went wrong!"
+      flash[:notice] = "There was a problem"
+      render "new"
     end
   end
   
@@ -29,6 +31,9 @@ class TweetsController < ApplicationController
   end
   
   def destroy
+    @tweet = Tweet.find(params[:id])
+    @tweet.destroy
+    redirect_to root_path
   end
 
 end
